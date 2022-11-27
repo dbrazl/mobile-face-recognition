@@ -4,4 +4,4 @@ This is the back-end repo. Here you found a API to get information to the Baking
 
 This API serves:
 
-- POST /user/verify/face
+- POST /user/verify/face/:name

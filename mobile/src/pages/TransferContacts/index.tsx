@@ -1,9 +1,7 @@
 import React, {useContext} from 'react';
 import {StatusBar} from 'react-native';
-// import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-// import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
-
-import {useRoute, RouteProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {UserContext} from '../../state/user/state';
 import {ParamList} from './@types';
 import {User} from '../../models/user';
@@ -11,7 +9,7 @@ import {User} from '../../models/user';
 import * as C from './styles';
 
 const TransferContacts: React.FC = () => {
-  // const navigation = useNavigation<NativeStackNavigationProp<any>>();
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const route = useRoute<RouteProp<ParamList, 'Detail'>>();
 
   const {state} = useContext(UserContext);
@@ -22,7 +20,7 @@ const TransferContacts: React.FC = () => {
     return {
       initial: user.name[0],
       name: user.name,
-      onPress: () => {},
+      onPress: () => navigation.navigate('VerifyID', {name: user.name, amount}),
     };
   };
 

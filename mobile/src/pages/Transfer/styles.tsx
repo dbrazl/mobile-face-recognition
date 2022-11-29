@@ -34,6 +34,7 @@ export const Message = styled.Text`
   font-size: 18px;
   color: #000;
   font-family: 'Roboto-Regular';
+  padding-right: 20px;
 `;
 
 export const List = styled.FlatList.attrs({

@@ -26,6 +26,7 @@ export const Message = styled.Text`
   font-family: 'Roboto-Regular';
   margin-top: 20px;
   padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export const List = styled.FlatList.attrs({

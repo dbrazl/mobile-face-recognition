@@ -27,18 +27,38 @@ export const Message = styled.Text`
   font-family: 'Roboto-Regular';
   margin-top: 20px;
   padding-left: 20px;
+  padding-right: 20px;
+`;
+
+export const ButtonWrapper = styled.View`
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 `;
 
 export const Button = styled.TouchableOpacity`
   padding: 10px 20px;
   background-color: #98a8f8;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 20px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
 `;
 
 export const ButtonText = styled.Text`
   font-size: 24px;
   font-family: 'Roboto-Bold';
+  color: white;
+`;
+
+export const CameraWrapper = styled.View`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 `;

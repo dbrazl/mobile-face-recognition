@@ -3,6 +3,7 @@ import Header from './components/Header';
 import {StatusBar} from 'react-native';
 
 import * as C from './styles';
+import Account from './components/Account';
 
 const Home: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
         <C.SafeArea>
           <C.Scroll>
             <Header />
+            <Account />
           </C.Scroll>
         </C.SafeArea>
       </C.Container>

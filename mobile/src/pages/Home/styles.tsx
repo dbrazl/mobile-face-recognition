@@ -10,5 +10,3 @@ export const Container = styled.View`
   background-color: #fff;
   flex: 1;
 `;
-
-export const Text = styled.Text``;

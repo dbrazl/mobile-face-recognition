@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Icon from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import {UserContext} from '../../../../state/user/state';
 
 import * as C from './styles';
 
 const Account: React.FC = () => {
+  const {state} = useContext(UserContext);
+
   const functions = [
     {
       icon: <Icon name="barcode-scan" size={30} color="#000" />,
@@ -31,6 +34,13 @@ const Account: React.FC = () => {
     },
   ];
 
+  const getPrice = (value: number): string => {
+    return `R$ ${value?.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`;
+  };
+
   const renderItem = ({item}) => {
     return (
       <C.Column>
@@ -43,7 +53,7 @@ const Account: React.FC = () => {
   return (
     <C.Container>
       <C.Label>Conta</C.Label>
-      <C.Value>R$ 50.000,00</C.Value>
+      <C.Value>{getPrice(state.user.balance)}</C.Value>
       <C.List
         data={functions}
         renderItem={renderItem}

@@ -1,36 +1,45 @@
 import React, {useContext} from 'react';
 import pix from '../../../../assets/images/pix.png';
 import {UserContext} from '../../../../state/user/state';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
 
 import * as C from './styles';
 
 const Account: React.FC = () => {
   const {state} = useContext(UserContext);
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
   const functions = [
     {
       icon: <C.Icon source={pix} />,
       label: 'Área Pix',
+      onPress: () => navigation.navigate('Pix'),
     },
     {
       icon: '',
       label: 'Função 2',
+      onPress: () => {},
     },
     {
       icon: '',
       label: 'Função 3',
+      onPress: () => {},
     },
     {
       icon: '',
       label: 'Função 4',
+      onPress: () => {},
     },
     {
       icon: '',
       label: 'Função 5',
+      onPress: () => {},
     },
     {
       icon: '',
       label: 'Função 6',
+      onPress: () => {},
     },
   ];
 
@@ -44,7 +53,7 @@ const Account: React.FC = () => {
   const renderItem = ({item}) => {
     return (
       <C.Column>
-        <C.Item>{item.icon}</C.Item>
+        <C.Item onPress={item.onPress}>{item.icon}</C.Item>
         <C.LabelItem>{item.label}</C.LabelItem>
       </C.Column>
     );

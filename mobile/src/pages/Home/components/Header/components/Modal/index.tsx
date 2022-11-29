@@ -18,7 +18,7 @@ const Modal: React.FC<Props> = ({
 
   const renderItem = (user: User, index: number) => {
     return (
-      <C.Button onPress={selectUser} key={index}>
+      <C.Button onPress={() => selectUser(user)} key={index}>
         <C.Person>{user.name}</C.Person>
       </C.Button>
     );

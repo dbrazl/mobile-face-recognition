@@ -9,7 +9,7 @@ export const Container = styled.View`
   padding: 20px;
 `;
 
-export const Account = styled.View`
+export const RoundButton = styled.TouchableOpacity`
   width: 50px;
   height: 50px;
   display: flex;

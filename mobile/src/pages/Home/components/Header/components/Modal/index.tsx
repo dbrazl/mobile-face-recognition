@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {User} from '../../../../../../models/user';
+import {UserContext} from '../../../../../../state/user/state';
 import {Props} from './@types';
 
 import * as C from './styles';
@@ -8,39 +10,24 @@ const Modal: React.FC<Props> = ({
   onClose = () => {},
   onSelectOption = () => {},
 }) => {
-  const sendDanielData = (): void => {
-    onSelectOption({
-      name: 'Daniel',
-      balance: 50000,
-    });
+  const {state} = useContext(UserContext);
+
+  const selectUser = (user: User): void => {
+    onSelectOption(user);
   };
 
-  const sendCamilaData = (): void => {
-    onSelectOption({
-      name: 'Camila',
-      balance: 80000,
-    });
-  };
-
-  const sendRenanData = (): void => {
-    onSelectOption({
-      name: 'Renan',
-      balance: 20000,
-    });
+  const renderItem = (user: User) => {
+    return (
+      <C.Button onPress={selectUser}>
+        <C.Person>{user.name}</C.Person>
+      </C.Button>
+    );
   };
 
   return (
     <C.Wrapper isVisible={open} onBackdropPress={onClose}>
       <C.Container>
-        <C.Button onPress={sendDanielData}>
-          <C.Person>Daniel</C.Person>
-        </C.Button>
-        <C.Button onPress={sendCamilaData}>
-          <C.Person>Camila</C.Person>
-        </C.Button>
-        <C.Button onPress={sendRenanData}>
-          <C.Person>Renan</C.Person>
-        </C.Button>
+        {state.users.map(renderItem)}
         <C.Button onPress={onClose}>
           <C.CloseLabel>Fechar</C.CloseLabel>
         </C.Button>

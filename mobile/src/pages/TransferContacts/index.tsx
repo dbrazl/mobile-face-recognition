@@ -54,10 +54,13 @@ const TransferContacts: React.FC = () => {
       <C.Container>
         <C.SafeArea>
           <C.Scroll>
-            <C.Title>Para quem você quer transferir {getPrice(amount)}</C.Title>
+            <C.Title>
+              Para quem você quer transferir {getPrice(amount)}?
+            </C.Title>
             <C.Message>
               Encontre um contato na sua lista ou inicie uma nova transferência
             </C.Message>
+            <C.Label>Contatos frequentes</C.Label>
             <C.List
               data={contacts}
               renderItem={renderItem}

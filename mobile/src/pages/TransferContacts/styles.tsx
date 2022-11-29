@@ -73,3 +73,11 @@ export const Initial = styled.Text`
   color: #808080;
   text-transform: uppercase;
 `;
+
+export const Label = styled.Text`
+  font-size: 16px;
+  font-family: 'Roboto-Regular';
+  color: #808080;
+  margin-left: 20px;
+  margin-top: 20px;
+`;

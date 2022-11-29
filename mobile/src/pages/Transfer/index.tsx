@@ -2,10 +2,14 @@ import React, {useContext, useState} from 'react';
 import {StatusBar} from 'react-native';
 import {UserContext} from '../../state/user/state';
 import Icon from 'react-native-vector-icons/dist/Feather';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
 
 import * as C from './styles';
 
 const Transfer: React.FC = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
+
   const {state} = useContext(UserContext);
   const [amount, setAmount] = useState();
 
@@ -37,7 +41,12 @@ const Transfer: React.FC = () => {
             />
           </C.Scroll>
         </C.SafeArea>
-        <C.Next>
+        <C.Next
+          onPress={() =>
+            navigation.navigate('TransferContacts', {
+              amount,
+            })
+          }>
           <Icon name="arrow-right" size={30} color="#fff" />
         </C.Next>
       </C.Container>

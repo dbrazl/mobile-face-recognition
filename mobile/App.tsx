@@ -1,11 +1,11 @@
 import React from 'react';
-import Home from './src/pages/Home';
+import Routes from './src/routes';
 import Provider from './src/state/provider';
 
 const App = () => {
   return (
     <Provider>
-      <Home />
+      <Routes />
     </Provider>
   );
 };

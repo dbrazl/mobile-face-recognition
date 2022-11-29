@@ -5,24 +5,27 @@ export const SafeArea = styled.SafeAreaView``;
 export const Scroll = styled.ScrollView``;
 
 export const Container = styled.View`
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
+  padding-top: 50px;
+  background-color: white;
 `;
 
 export const Title = styled.Text`
-  font-size: 24px;
+  font-size: 36px;
   color: black;
   font-family: 'Roboto-Bold';
+  padding-left: 20px;
 `;
 
 export const Message = styled.Text`
-  font-size: 16px;
+  font-size: 20px;
   color: #808080;
   font-family: 'Roboto-Regular';
   margin-top: 20px;
+  padding-left: 20px;
 `;
 
 export const List = styled.FlatList.attrs({

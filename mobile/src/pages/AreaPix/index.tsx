@@ -43,7 +43,7 @@ const AreaPix: React.FC = () => {
 
   return (
     <>
-      <StatusBar barStyle="light-content" backgroundColor="#fff" />
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <C.Container>
         <C.SafeArea>
           <C.Scroll>

@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Home from '../pages/Home';
 import AreaPix from '../pages/AreaPix';
+import Transfer from '../pages/Transfer';
 
 export default function Routes() {
   const Stack = createNativeStackNavigator();
@@ -17,6 +18,7 @@ export default function Routes() {
         }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Pix" component={AreaPix} />
+        <Stack.Screen name="Transfer" component={Transfer} />
       </Stack.Navigator>
     </NavigationContainer>
   );

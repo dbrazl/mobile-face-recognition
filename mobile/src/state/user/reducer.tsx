@@ -7,8 +7,8 @@ const userReducer = (state: any, action: any) => {
       return {
         ...state,
         user: {
-          name: action.payload.name,
-          balance: action.payload.balance,
+          name: action.payload.user.name,
+          balance: action.payload.user.balance,
         },
       };
 

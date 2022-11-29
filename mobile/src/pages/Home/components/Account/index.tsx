@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import Icon from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import pix from '../../../../assets/images/pix.png';
 import {UserContext} from '../../../../state/user/state';
 
 import * as C from './styles';
@@ -9,8 +9,8 @@ const Account: React.FC = () => {
 
   const functions = [
     {
-      icon: <Icon name="barcode-scan" size={30} color="#000" />,
-      label: 'Pagar',
+      icon: <C.Icon source={pix} />,
+      label: 'Área Pix',
     },
     {
       icon: '',

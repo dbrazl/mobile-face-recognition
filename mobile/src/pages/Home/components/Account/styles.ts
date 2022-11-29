@@ -52,3 +52,10 @@ export const LabelItem = styled.Text`
   margin-top: 10px;
   left: -5px;
 `;
+
+export const Icon = styled.Image.attrs({
+  resizeMode: 'contain',
+})`
+  width: 30px;
+  height: 30px;
+`;

@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import AreaPix from '../pages/AreaPix';
 import Transfer from '../pages/Transfer';
 import TransferContacts from '../pages/TransferContacts';
+import VerifyID from '../pages/VerifyID';
 
 export default function Routes() {
   const Stack = createNativeStackNavigator();
@@ -21,6 +22,7 @@ export default function Routes() {
         <Stack.Screen name="Pix" component={AreaPix} />
         <Stack.Screen name="Transfer" component={Transfer} />
         <Stack.Screen name="TransferContacts" component={TransferContacts} />
+        <Stack.Screen name="VerifyID" component={VerifyID} />
       </Stack.Navigator>
     </NavigationContainer>
   );

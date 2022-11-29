@@ -16,9 +16,9 @@ const Modal: React.FC<Props> = ({
     onSelectOption(user);
   };
 
-  const renderItem = (user: User) => {
+  const renderItem = (user: User, index: number) => {
     return (
-      <C.Button onPress={selectUser}>
+      <C.Button onPress={selectUser} key={index}>
         <C.Person>{user.name}</C.Person>
       </C.Button>
     );
@@ -27,7 +27,7 @@ const Modal: React.FC<Props> = ({
   return (
     <C.Wrapper isVisible={open} onBackdropPress={onClose}>
       <C.Container>
-        {state.users.map(renderItem)}
+        {state.users?.map(renderItem)}
         <C.Button onPress={onClose}>
           <C.CloseLabel>Fechar</C.CloseLabel>
         </C.Button>

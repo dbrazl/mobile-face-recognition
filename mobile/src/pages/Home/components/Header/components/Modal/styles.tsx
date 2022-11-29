@@ -29,4 +29,5 @@ export const CloseLabel = styled.Text`
   font-family: 'Roboto-Bold';
   border-top-width: 1px;
   border-top-color: #eee;
+  margin-top: 10px;
 `;

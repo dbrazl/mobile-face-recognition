@@ -19,7 +19,10 @@ const userReducer = (state: any, action: any) => {
           balance: state.user.balance - action.payload.value,
         },
         users: [
-          ...state.users,
+          ...state.users.filter(
+            item =>
+              item.name !== state.user.name && item.name !== action.payload.to,
+          ),
           {
             name: state.user.name,
             balance: state.user.balance - action.payload.value,

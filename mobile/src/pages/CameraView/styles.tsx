@@ -72,3 +72,26 @@ export const Message = styled.Text`
   font-family: 'Roboto-Regular';
   color: #fff;
 `;
+
+export const Error = styled.View`
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+`;
+
+export const ErrorMessage = styled.Text`
+  font-size: 16px;
+  font-family: 'Roboto-Regular';
+`;
+
+export const ChangeCamera = styled.TouchableOpacity`
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  z-index: 1;
+`;

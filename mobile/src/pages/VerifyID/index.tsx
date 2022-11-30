@@ -17,12 +17,12 @@ const VerifyID: React.FC = () => {
     const cameraPermission = await Camera.getCameraPermissionStatus();
 
     if (cameraPermission === 'authorized') {
-      navigation.navigate('CameraView');
+      navigation.navigate('CameraView', {amount, name});
     } else {
       const newCameraPermission = await Camera.requestCameraPermission();
 
       if (newCameraPermission === 'authorized') {
-        navigation.navigate('CameraView');
+        navigation.navigate('CameraView', {amount, name});
       }
     }
   };

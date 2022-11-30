@@ -11,6 +11,28 @@ const userReducer = (state: any, action: any) => {
         },
       };
 
+    case Actions.TRANSFER_MONEY:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          balance: state.user.balance - action.payload.value,
+        },
+        users: [
+          ...state.users,
+          {
+            name: state.user.name,
+            balance: state.user.balance - action.payload.value,
+          },
+          {
+            name: action.payload.to,
+            balance:
+              state.users.find(one => one.name === action.payload.to).balance +
+              action.payload.value,
+          },
+        ],
+      };
+
     default:
       return {};
   }

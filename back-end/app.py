@@ -63,14 +63,13 @@ def verify_face(name):
     else:
         prediction = None
         probs = None
-        pred_idx = None
-    
-    if prediction == name:
-        body = { 'isUser': true }
-    else:    
-        body = { 'isUser': false }    
+        pred_idx = None   
 
-    return jsonify(body)
+    return jsonify({ 
+        'prediction': prediction,
+        'probability_percent': float(probs[pred_idx]) * 100,
+        'passOnVerification': name == prediction
+    });
 
 
 app.run(debug=True)

@@ -1,7 +1,0 @@
-fastai==2.7.10
-Flask==2.2.2
-flask_uploads==0.2.1
-flask_wtf==1.0.1
-WTForms==3.0.1
-Werkzeug==2.2.2
-efficientnet_pytorch==0.7.1
